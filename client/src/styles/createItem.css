@@ -1,0 +1,16 @@
+.create-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.create-btn img {
+  width: 3rem;
+  margin-bottom: 1rem;
+}
+
+.create-btn p {
+  font-size: 0.8rem;
+  font-weight: 700;
+}

@@ -1,0 +1,28 @@
+.request-loader {
+  display: block;
+  width: 100%;
+  height: 120vh;
+  background-color: black;
+  opacity: 0.5;
+  position: absolute;
+  z-index: 100;
+}
+
+.request-loader .bar {
+  width: 0%;
+  height: 1rem;
+  background: var(--main-light-blue);
+  animation: loadingAnimation 10s linear forwards;
+}
+
+@keyframes loadingAnimation {
+  0% {
+    width: 0%;
+  }
+  90% {
+    width: 90%;
+  }
+  100% {
+    width: 90%;
+  }
+}
