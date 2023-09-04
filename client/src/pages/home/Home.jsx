@@ -1,14 +1,12 @@
 import React from "react";
-import { About, Features, Hero, Navbar, Qrcode } from "../components";
+import Navbar from "./Navbar";
+import Hero from "./Hero";
 
 const Home = () => {
   return (
     <>
       <Navbar />
       <Hero />
-      {/* <Qrcode />
-      <Features />
-      <About /> */}
     </>
   );
 };

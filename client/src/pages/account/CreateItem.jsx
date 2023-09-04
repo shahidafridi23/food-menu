@@ -1,52 +1,42 @@
 import React, { useContext, useState } from "react";
-import { UserContext } from "../UserContext";
+import { UserContext } from "../../UserContext";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
 
-const EditItem = () => {
-  const { user, currentItem, setCurrentItem } = useContext(UserContext);
+const CreateItem = () => {
+  const { user } = useContext(UserContext);
   if (!user) {
     return <Navigate to={"/register"} />;
   }
 
-  const [name, setName] = useState(currentItem?.name);
-  const [price, setPrice] = useState(currentItem?.price);
-  const [description, setDescription] = useState(currentItem?.description);
-  const [isavailable, setIsavailable] = useState(currentItem?.isavailable);
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
+  const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
   const [redirect, setRedirect] = useState(false);
-  const id = currentItem?._id;
-  console.log(id);
-  console.log(currentItem);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const formData = new FormData();
     formData.append("name", name);
     formData.append("price", price);
     formData.append("description", description);
-    formData.append("isavailable", isavailable);
-    if (image) {
-      formData.append("image", image);
-    }
+    formData.append("image", image);
+
     if (user) {
+      setLoading(true);
       try {
-        setLoading(true);
-        const res = await axios.patch(`/menuItems/${id}`, formData);
-        console.log(res);
-        setCurrentItem(null);
-        toast.success("Item Updated");
-        setLoading(false);
+        const { data } = await axios.post(`/menuItems`, formData);
+        toast.success("Food Item Created!");
         setRedirect(true);
-      } catch (error) {
-        console.log(error);
         setLoading(false);
-        toast.error(error.response.data.msg);
+      } catch (error) {
+        setLoading(false);
+        toast.error("Something went wrong!");
+        console.log(error);
       }
-    } else {
-      console.log("user is not available");
     }
   };
 
@@ -62,7 +52,7 @@ const EditItem = () => {
     >
       <div className="md:w-1/2">
         <form className="p-4 md:px-20" onSubmit={handleSubmit}>
-          <h2 className="text-2xl font-bold">Edit Food Item</h2>
+          <h2 className="text-2xl font-bold">Create Food Item</h2>
           <p className="mb-6">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit.
           </p>
@@ -120,21 +110,9 @@ const EditItem = () => {
             <input
               type="file"
               name="image"
+              required
               className="py-3 px-4 mb-5 border border-gray-300 rounded-md text-base w-full focus:border-light-blue focus:outline-none focus:shadow-none focus:placeholder:text-light-blue focus:label:text-light-blue file:bg-transparent file:border-none file:text-lg file:font-medium"
               onChange={(e) => setImage(e.target.files[0])}
-            />
-          </div>
-
-          <div className="group relative">
-            <label className="absolute top-[-17px] left-2 bg-white text-black px-2 py-1 group-focus-within:text-light-blue">
-              Availability
-            </label>
-            <input
-              type="checkbox"
-              name="isavailable"
-              checked={isavailable}
-              className="py-3 px-4 mb-5 border border-gray-300 rounded-md text-base w-full focus:border-light-blue focus:outline-none focus:shadow-none focus:placeholder:text-light-blue focus:label:text-light-blue"
-              onChange={(e) => setIsavailable(e.target.checked)}
             />
           </div>
 
@@ -144,7 +122,7 @@ const EditItem = () => {
               className="login-btn w-full bg-light-blue border-none text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300 ease-in-out cursor-pointer"
               disabled={loading}
             >
-              Edit
+              Create
             </button>
           </div>
         </form>
@@ -153,4 +131,4 @@ const EditItem = () => {
   );
 };
 
-export default EditItem;
+export default CreateItem;

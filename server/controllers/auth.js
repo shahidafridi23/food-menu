@@ -46,6 +46,11 @@ const login = async (req, res) => {
 const getProfile = async (req, res) => {
   try {
     const { token } = req.cookies;
+    if (!token) {
+      return res
+        .status(StatusCodes.BAD_REQUEST)
+        .json({ msg: "Token is not present" });
+    }
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const user = await User.findOne({ _id: decoded.userId });
     res
@@ -56,8 +61,18 @@ const getProfile = async (req, res) => {
   }
 };
 
+const logout = async (req, res) => {
+  res.cookie("token", "", {
+    httpOnly: true,
+    sameSite: "none",
+    secure: true,
+  });
+  res.status(200).json({ msg: "logout" });
+};
+
 module.exports = {
   register,
   login,
   getProfile,
+  logout,
 };

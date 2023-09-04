@@ -1,8 +1,7 @@
-import Home from "./Home";
-import Login from "./Login";
-import Register from "./Register";
-import Account from "./Account";
-import Menu from "./Menu";
-import CreateItem from "./CreateItem";
-import EditItem from "./Edit";
-export { Home, Login, Register, Account, Menu, CreateItem, EditItem };
+import Home from "./home/Home";
+import Account from "./account/Account";
+import CreateItem from "./account/CreateItem";
+import EditItem from "./account/Edit";
+import Menu from "./menu/Menu";
+
+export { Home, Account, CreateItem, EditItem, Menu };
