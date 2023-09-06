@@ -1,7 +1,7 @@
-import CreateImg from "../assets/addIcon.svg";
-import UpdateImg from "../assets/refreshIcon.svg";
-import DeleteImg from "../assets/deleteIcon.svg";
-import SwitchImg from "../assets/switchIcon.svg";
+import CreateImg from "../assets/images/addIcon.svg";
+import UpdateImg from "../assets/images/refreshIcon.svg";
+import DeleteImg from "../assets/images/deleteIcon.svg";
+import SwitchImg from "../assets/images/switchIcon.svg";
 
 const featureCards = [
   {
@@ -14,7 +14,7 @@ const featureCards = [
     title: "Update",
     image: UpdateImg,
     description:
-      "Easily modify existing food items, empowering users to make changes to content and properties, ensuring up-to-date information.",
+      "Easily modify food items, empowering users to make changes to content and properties, ensuring up-to-date information.",
   },
   {
     title: "Delete",
@@ -26,7 +26,7 @@ const featureCards = [
     title: "Availability",
     image: SwitchImg,
     description:
-      "control the availability of their food menu items, ensuring accurate representation and timely updates for customers' dining experiences.",
+      "control the availability of your food menu items, ensuring accurate representation and timely updates for user experiences.",
   },
 ];
 

@@ -25,6 +25,7 @@ const Login = () => {
       setLoading(false);
       setRedirect(true);
     } catch (error) {
+      console.log(error);
       const errMsg = error.response.data.msg;
       toast.error(errMsg);
       setLoading(false);

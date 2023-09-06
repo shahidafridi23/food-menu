@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <div className="md:flex md:flex-row-reverse items-center bg-slate-50 justify-center">
       <div className="hero-img  px-6  md:w-1/2">
-        <AccountSvg className="w-full h-96" />
+        <img src={AccountSvg} alt="" />
       </div>
       <div className="description p-6 text-center md:w-1/2 md:px-20 md:text-left">
         <h1 className="text-3xl font-bold mb-4">

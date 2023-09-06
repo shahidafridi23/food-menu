@@ -28,30 +28,30 @@ const Navbar = () => {
                 Home
               </Link>
               <Link
-                to="/"
+                to="qrSection"
                 spy={true}
                 smooth={true}
-                offset={50}
+                offset={0}
                 duration={500}
                 className="text-gray-800 text-lg font-semibold hover:text-light-blue mr-6 cursor-pointer"
               >
                 Qr Code
               </Link>
               <Link
-                to="/"
+                to="featureSection"
                 spy={true}
                 smooth={true}
-                offset={50}
+                offset={0}
                 duration={500}
                 className="text-gray-800 text-lg font-semibold hover:text-light-blue mr-6 cursor-pointer"
               >
                 Features
               </Link>
               <Link
-                to="/"
+                to="aboutSection"
                 spy={true}
                 smooth={true}
-                offset={50}
+                offset={0}
                 duration={500}
                 className="text-gray-800 text-lg font-semibold hover:text-light-blue mr-6 cursor-pointer"
               >
@@ -95,38 +95,42 @@ const Navbar = () => {
               to="/"
               spy={true}
               smooth={true}
-              offset={50}
+              offset={0}
               duration={500}
+              onClick={() => setIsOpenMenu(!isOpenMenu)}
               className="text-gray-800  font-semibold hover:text-light-blue mr-6 cursor-pointer mt-2 text-md"
             >
               Home
             </Link>
             <Link
-              to="/"
+              to="qrSection"
               spy={true}
               smooth={true}
-              offset={50}
+              offset={0}
               duration={500}
+              onClick={() => setIsOpenMenu(!isOpenMenu)}
               className="text-gray-800  font-semibold hover:text-light-blue mr-6 cursor-pointer mt-2 text-md"
             >
               Qr Code
             </Link>
             <Link
-              to="/"
+              to="featureSection"
               spy={true}
               smooth={true}
-              offset={50}
+              offset={0}
               duration={500}
+              onClick={() => setIsOpenMenu(!isOpenMenu)}
               className="text-gray-800  font-semibold hover:text-light-blue mr-6 cursor-pointer mt-2 text-md"
             >
               Features
             </Link>
             <Link
-              to="/"
+              to="aboutSection"
               spy={true}
               smooth={true}
-              offset={50}
+              offset={0}
               duration={500}
+              onClick={() => setIsOpenMenu(!isOpenMenu)}
               className="text-gray-800 font-semibold hover:text-light-blue mr-6 cursor-pointer mb-4 mt-2 text-md"
             >
               About Us

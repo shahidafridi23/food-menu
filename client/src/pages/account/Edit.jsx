@@ -18,8 +18,7 @@ const EditItem = () => {
   const [loading, setLoading] = useState(false);
   const [redirect, setRedirect] = useState(false);
   const id = currentItem?._id;
-  console.log(id);
-  console.log(currentItem);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -34,8 +33,8 @@ const EditItem = () => {
     if (user) {
       try {
         setLoading(true);
-        const res = await axios.patch(`/menuItems/${id}`, formData);
-        console.log(res);
+        await axios.patch(`/menuItems/${id}`, formData);
+
         setCurrentItem(null);
         toast.success("Item Updated");
         setLoading(false);
@@ -43,7 +42,7 @@ const EditItem = () => {
       } catch (error) {
         console.log(error);
         setLoading(false);
-        toast.error(error.response.data.msg);
+        toast.error(error?.response?.data?.msg);
       }
     } else {
       console.log("user is not available");

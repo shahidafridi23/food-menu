@@ -13,7 +13,6 @@ const Menu = () => {
       setLoading(true);
       try {
         const { data } = await axios.get(`/user/${params.id}`);
-        console.log(data);
         setName(data?.user?.name);
         setAllPosts(data?.user?.data);
         setLoading(false);
@@ -47,7 +46,7 @@ const Menu = () => {
         </div>
       </div>
       <div className="user-card-container">
-        <CardsContainer loading={loading} allPosts={allPosts} isMenu={isMenu} />
+        <CardsContainer loading={loading} allPosts={allPosts} />
       </div>
     </>
   );

@@ -14,8 +14,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
 
   const handleLogout = async () => {
     try {
-      const res = await axios.post("/auth/logout");
-      console.log(res);
+      await axios.post("/auth/logout");
       setUser(null);
       setRedirect(true);
     } catch (error) {

@@ -22,8 +22,8 @@ const Account = () => {
       try {
         setLoading(true);
         const { data } = await axios.get(`/menuItems`);
-        console.log(data);
-        setAllPosts(data.items);
+
+        setAllPosts(data?.items);
         setLoading(false);
       } catch (error) {
         console.log(error);

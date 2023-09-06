@@ -10,7 +10,6 @@ export function UserContextProvider({ children }) {
     const getProfile = async () => {
       try {
         const res = await axios.get("/auth/profile");
-        console.log(res);
         setUser(res?.data);
       } catch (error) {
         console.log(error);

@@ -11,8 +11,6 @@ import { UserContextProvider } from "./UserContext";
 axios.defaults.baseURL = `${import.meta.env.VITE_BACKEND_URL}/api/v1`;
 axios.defaults.withCredentials = true;
 
-console.log(import.meta.env.VITE_BACKEND_URL);
-
 function withUserContext(Component) {
   return () => (
     <UserContextProvider>

@@ -1,10 +1,12 @@
 const User = require("../models/user");
 const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
 const { StatusCodes } = require("http-status-codes");
 const { BadRequestError, UnauthenticatedError } = require("../errors");
 
 const register = async (req, res) => {
-  const user = await User.create({ ...req.body });
+  const encrytedPassword = await bcrypt.hash(req.body.password, 10);
+  const user = await User.create({ ...req.body, password: encrytedPassword });
   const token = user.createJWT();
 
   res.cookie("token", token, {

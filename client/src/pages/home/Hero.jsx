@@ -3,7 +3,7 @@ import { HeroSvg } from "../../assets/images";
 import PrimaryBtn from "../../utils/PrimaryBtn";
 const Hero = () => {
   return (
-    <section className="md:flex items-center justify-center my-8">
+    <section className="md:flex items-center justify-center my-8 md:pt-10 md:pb-10">
       <div className="">
         <HeroSvg className="w-full  h-64 md:h-96" />
       </div>

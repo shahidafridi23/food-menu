@@ -8,11 +8,10 @@ const DeleteModel = ({ setIsDeleted }) => {
   const handleDeleteItem = async () => {
     if (currentItem) {
       try {
-        const response = await axios.delete(`/menuItems/${currentItem._id}`);
-        console.log(response);
+        const { data } = await axios.delete(`/menuItems/${currentItem._id}`);
         setCurrentItem(null);
         setIsDeleted(true);
-        toast.success(response.data);
+        toast.success(data);
       } catch (error) {
         console.log(error);
         toast.error(error.response.data.msg);
@@ -40,10 +39,10 @@ const DeleteModel = ({ setIsDeleted }) => {
             </svg>
           </div>
           <div className="mt-4 md:mt-0 md:ml-6 text-center md:text-left">
-            <p className="font-bold">Delete your account</p>
+            <p className="font-bold">Delete Food Item</p>
             <p className="text-sm text-gray-700 mt-1">
-              You will lose all of your data by deleting your account. This
-              action cannot be undone.
+              You will lose all of your data by deleting food item. This action
+              cannot be undone.
             </p>
           </div>
         </div>
