@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
 import { UserContext } from "../../UserContext";
+import FormLoader from "../../utils/FormLoader";
 
 const EditItem = () => {
   const { user, currentItem, setCurrentItem } = useContext(UserContext);
@@ -54,11 +55,8 @@ const EditItem = () => {
   }
 
   return (
-    <div
-      className={`${
-        loading && "opacity-80"
-      } flex items-center justify-center p-2 md:p-6`}
-    >
+    <div className="flex items-center justify-center p-2 md:p-6">
+      {loading && <FormLoader />}
       <div className="md:w-1/2">
         <form className="p-4 md:px-20" onSubmit={handleSubmit}>
           <h2 className="text-2xl font-bold">Edit Food Item</h2>

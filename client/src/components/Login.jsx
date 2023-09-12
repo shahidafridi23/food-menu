@@ -4,6 +4,7 @@ import { UserContext } from "../UserContext";
 import { toast } from "react-toastify";
 import { FormSvg } from "../assets/images";
 import axios from "axios";
+import FormLoader from "../utils/FormLoader";
 const Login = () => {
   const { user, setUser } = useContext(UserContext);
   if (user) {
@@ -37,11 +38,8 @@ const Login = () => {
   }
 
   return (
-    <section
-      className={`${
-        loading && "opacity-80"
-      } w-full md:flex md:flex-row-reverse  md:items-center md:justify-between`}
-    >
+    <section className=" w-full md:flex md:flex-row-reverse  md:items-center md:justify-between">
+      {loading && <FormLoader />}
       <div className="md:w-1/2 md:h-screen relative p-10 bg-light-blue text-white">
         <h2 className="text-xl font-bold mb-2">Please Sign in to continue!</h2>
         <p className="">

@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import { UserContext } from "../UserContext";
 import { FormSvg } from "../assets/images";
 import axios from "axios";
+import FormLoader from "../utils/FormLoader";
 
 const Register = () => {
   const { user, setUser } = useContext(UserContext);
@@ -43,11 +44,8 @@ const Register = () => {
   }
 
   return (
-    <section
-      className={`${
-        loading && "opacity-80"
-      } w-full md:flex md:items-center md:justify-between`}
-    >
+    <section className="w-full md:flex md:items-center md:justify-between">
+      {loading && <FormLoader />}
       <div className="md:w-1/2 md:h-screen relative p-10 bg-light-blue text-white">
         <h2 className="text-xl font-bold mb-2">Please Sign up to continue!</h2>
         <p className="">
