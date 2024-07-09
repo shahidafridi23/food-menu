@@ -62,16 +62,9 @@ const Navbar = () => {
             <div className="hidden md:flex md:items-center">
               <RedirctLink
                 to="/login"
-                href="#"
-                className="text-gray-800 text-sm font-semibold hover:text-light-blue mr-4"
-              >
-                Sign in
-              </RedirctLink>
-              <RedirctLink
-                to="/register"
                 className="bg-light-blue text-white text-sm font-semibold border px-4 py-2 rounded-lg hover:text-light-blue hover:border-light-blue hover:bg-white"
               >
-                Sign up
+                login
               </RedirctLink>
             </div>
 
@@ -138,15 +131,9 @@ const Navbar = () => {
             <div className="flex justify-between items-center border-t-2 pt-2">
               <RedirctLink
                 to={"/login"}
-                className="text-gray-800 text-sm font-semibold hover:text-light-blue mr-4"
-              >
-                Sign in
-              </RedirctLink>
-              <RedirctLink
-                to={"/register"}
                 className="bg-light-blue text-white text-sm font-semibold border px-4 py-2 rounded-lg hover:text-light-blue hover:border-light-blue hover:bg-white"
               >
-                Sign up
+                login
               </RedirctLink>
             </div>
           </div>
