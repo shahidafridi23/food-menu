@@ -1,6 +1,6 @@
 import React from "react";
 import QrCode from "../../assets/placeholders/qrcode.png";
-import PrimaryBtn from "../../utils/PrimaryBtn";
+
 const QrSection = () => {
   return (
     <section
@@ -17,7 +17,7 @@ const QrSection = () => {
           Please create account to get your own.
         </p>
         <a
-          href="https://food-menu-afridi.netlify.app/menu/64f8bb46ba01c8007c830782"
+          href="https://food-menu-afridi.netlify.app/menu/66910fcc11877c263870540d"
           target="_blank"
           className="relative inline-flex items-center md:px-12 md:py-3 px-6 py-1 overflow-hidden text-lg font-medium text-light-blue border-2 border-light-blue rounded-full hover:text-white group hover:bg-gray-50"
         >

@@ -15,7 +15,12 @@ const createMenuItem = async (req, res) => {
   req.body.createdBy = req.user.userId;
   const file = req.file;
   const fileUri = getDataUri(file);
-  const myCloud = await cloudinary.v2.uploader.upload(fileUri.content);
+  const myCloud = await cloudinary.v2.uploader.upload(fileUri.content, {
+    transformation: [
+      { width: 300, height: 400, crop: "fill" },
+      { quality: 70, format: "webp" },
+    ],
+  });
 
   const item = await MenuItems.create({
     ...req.body,
